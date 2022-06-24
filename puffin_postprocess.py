@@ -108,9 +108,9 @@ def extract_power_1D(folder: str):
 
 # ------------------------- #
 
-def decorated_save(folder, file, obj, decimals: int = 4):
+def decorated_save(folder, file, obj, decimals: int = 5):
     print(f'Saving {file.split(".dat")[0]} to {os.path.join(folder, file)}')
-    np.savetxt(os.path.join(folder, file), np.round(obj, decimals))
+    np.savetxt(os.path.join(folder, file), obj, fmt=f'%1.{decimals}f')
 
 # ------------------------- #
 
